@@ -79,35 +79,29 @@ class ViewController: UIViewController {
         
         Alamofire.request(jsonURL, method: .get).responseJSON { (responds) in
             
-//            if let JSON = responds.result.value {
-//                print(JSON)
-//            }
+            //if let JSON = responds.result.value {
+            //    print(JSON)
+            //}
+            
             if responds.result.isSuccess {
                 //print(responds)
                 
                 let urlJSON : JSON = JSON(responds.result.value!)
                 
-                self.shortUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
+                self.shortUrlClicksAllTimes = "\nShort Url Clicks Of All Times : \n" + urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
                 self.longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
                 
-                self.shortUrlClicksLastMonth = urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
+                self.shortUrlClicksLastMonth = "\nShort Url Clicks Of Last month : \n" + urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
                 self.longUrlClicksLastMonth = urlJSON["analytics"]["month"]["longUrlClicks"].stringValue
                 
-                self.shortUrlClicksLastWeek = urlJSON["analytics"]["week"]["shortUrlClicks"].stringValue
+                self.shortUrlClicksLastWeek = "\nShort Url Clicks Of Last week : \n" + urlJSON["analytics"]["week"]["shortUrlClicks"].stringValue
                 self.longUrlClicksLastWeek = urlJSON["analytics"]["week"]["longUrlClicks"].stringValue
                 
-                self.shortUrlClicksLastDay = urlJSON["analytics"]["day"]["shortUrlClicks"].stringValue
+                self.shortUrlClicksLastDay = "\nShort Url Clicks Of Last day : \n" + urlJSON["analytics"]["day"]["shortUrlClicks"].stringValue
                 self.longUrlClicksLastDay = urlJSON["analytics"]["day"]["longUrlClicks"].stringValue
                 
-                self.shortUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
+                self.shortUrlClicksLastTwoHours = "\nShort Url Clicks Of Last two Hours : \n" + urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
                 self.longUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["longUrlClicks"].stringValue
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 
