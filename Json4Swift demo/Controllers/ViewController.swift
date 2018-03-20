@@ -10,45 +10,60 @@ import Alamofire
 import SVProgressHUD
 import SwiftyJSON
 
+var longURL: String?
+var shortURL: String?
+var status: String?
+var created: String?
+
+var shortUrlClicksAllTimes: String?
+var longUrlClicksAllTimes: String?
+
+var shortUrlClicksLastMonth: String?
+var longUrlClicksLastMonth: String?
+
+var shortUrlClicksLastWeek: String?
+var longUrlClicksLastWeek: String?
+
+var shortUrlClicksLastDay: String?
+var longUrlClicksLastDay: String?
+
+var shortUrlClicksLastTwoHours: String?
+var longUrlClicksLastTwoHours: String?
+
+
+
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    
+    var data : [CITreeViewData] = []
+    var treeView:CITreeView!
+    
+    let treeViewCellIdentifier = "TreeViewCellIdentifier"
+    let treeViewCellNibName = "CITreeViewCell"
     
     var jsonArray: [String]?
     let jsonURL = "https://api.myjson.com/bins/17rcy5"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.delegate = self
-        tableView.dataSource = self
         
-        //getJsonData()
         getLongURLFromGoogle()
-    }
+        
+        
+        data = CITreeViewData.getDefaultCITreeViewData()
+        treeView = CITreeView.init(frame: self.view.bounds, style: UITableViewStyle.plain)
+        treeView.treeViewDelegate = self
+        treeView.treeViewDataSource = self
+        treeView.collapseNoneSelectedRows = false
+        treeView.register(UINib(nibName: treeViewCellNibName, bundle: nil), forCellReuseIdentifier: treeViewCellIdentifier)
+        self.view.addSubview(treeView)
 
-    
-    
-    
-    func getJsonData(){
-       
-        guard let url = URL(string: jsonURL) else { return }
-            URLSession.shared.dataTask(with: url) { (data, response, err) in
-                guard let data = data else { return }
-                
-                do{
-                    let expandedURL = try JSONDecoder().decode(AllURLData.self, from: data)
-                    print(expandedURL)
-                }catch let jsonError {
-                    print(jsonError)
-                    let noConnection = UIAlertController(title: "Error! 😰", message: "Could not load data!", preferredStyle: .alert)
-                    let dismiss = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    noConnection.addAction(dismiss)
-                    self.present(noConnection, animated: true, completion: nil)
-                }
-            }.resume()
-        }
+        
+        
+        
+        
+    }
     
     
     
@@ -56,23 +71,6 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    var shortUrlClicksAllTimes: String?
-    var longUrlClicksAllTimes: String?
-    
-    var shortUrlClicksLastMonth: String?
-    var longUrlClicksLastMonth: String?
-    
-    var shortUrlClicksLastWeek: String?
-    var longUrlClicksLastWeek: String?
-    
-    var shortUrlClicksLastDay: String?
-    var longUrlClicksLastDay: String?
-    
-    var shortUrlClicksLastTwoHours: String?
-    var longUrlClicksLastTwoHours: String?
     
     
     func getLongURLFromGoogle(){
@@ -88,93 +86,32 @@ class ViewController: UIViewController {
                 
                 let urlJSON : JSON = JSON(responds.result.value!)
                 
-                self.shortUrlClicksAllTimes = "\nShort Url Clicks Of All Times : \n" + urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
-                self.longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
                 
-                self.shortUrlClicksLastMonth = "\nShort Url Clicks Of Last month : \n" + urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
-                self.longUrlClicksLastMonth = urlJSON["analytics"]["month"]["longUrlClicks"].stringValue
-                
-                self.shortUrlClicksLastWeek = "\nShort Url Clicks Of Last week : \n" + urlJSON["analytics"]["week"]["shortUrlClicks"].stringValue
-                self.longUrlClicksLastWeek = urlJSON["analytics"]["week"]["longUrlClicks"].stringValue
-                
-                self.shortUrlClicksLastDay = "\nShort Url Clicks Of Last day : \n" + urlJSON["analytics"]["day"]["shortUrlClicks"].stringValue
-                self.longUrlClicksLastDay = urlJSON["analytics"]["day"]["longUrlClicks"].stringValue
-                
-                self.shortUrlClicksLastTwoHours = "\nShort Url Clicks Of Last two Hours : \n" + urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
-                self.longUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["longUrlClicks"].stringValue
+                shortURL = urlJSON["id"].stringValue
+                print(shortURL!)
                 
                 
+                shortUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
+                longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
                 
-                print(self.shortUrlClicksAllTimes!)
-                print(self.longUrlClicksAllTimes!)
+                shortUrlClicksLastMonth = urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
+                longUrlClicksLastMonth = urlJSON["analytics"]["month"]["longUrlClicks"].stringValue
                 
-                print(self.shortUrlClicksLastMonth!)
-                print(self.longUrlClicksLastMonth!)
+                shortUrlClicksLastWeek = urlJSON["analytics"]["week"]["shortUrlClicks"].stringValue
+                longUrlClicksLastWeek = urlJSON["analytics"]["week"]["longUrlClicks"].stringValue
                 
-                print(self.shortUrlClicksLastWeek!)
-                print(self.longUrlClicksLastWeek!)
+                shortUrlClicksLastDay = urlJSON["analytics"]["day"]["shortUrlClicks"].stringValue
+                longUrlClicksLastDay = urlJSON["analytics"]["day"]["longUrlClicks"].stringValue
                 
-                print(self.shortUrlClicksLastDay!)
-                print(self.longUrlClicksLastDay!)
+                shortUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
+                longUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["longUrlClicks"].stringValue
                 
-                print(self.shortUrlClicksLastTwoHours!)
-                print(self.longUrlClicksLastTwoHours!)
+                self.treeView.reloadData()
                 
             }
         }
         
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -182,22 +119,56 @@ class ViewController: UIViewController {
     
 }// End of ViewController class
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension ViewController : CITreeViewDelegate {
+    func treeView(_ treeView: CITreeView, heightForRowAt indexPath: IndexPath, withTreeViewNode treeViewNode: CITreeViewNode) -> CGFloat {
+        return 45
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jsonArray?.count ?? 0
+    func treeView(_ treeView: CITreeView, didSelectRowAt treeViewNode: CITreeViewNode) {
+        print(treeViewNode.level)
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func willExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JsonCel", for: indexPath) as! JsonCell
-        
-        
-        return cell
     }
+    
+    func didExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
+        
+    }
+    
+    func willCollapseTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
+        
+    }
+    
+    func didCollapseTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
+    }
+    
     
 }
+
+extension ViewController : CITreeViewDataSource {
+    
+    
+    func treeView(_ treeView: CITreeView, atIndexPath indexPath: IndexPath, withTreeViewNode treeViewNode: CITreeViewNode) -> UITableViewCell {
+        let cell = treeView.dequeueReusableCell(withIdentifier: treeViewCellIdentifier) as! CITreeViewCell
+        let dataObj = treeViewNode.item as! CITreeViewData
+        cell.nameLabel.text = dataObj.name
+        cell.setupCell(level: treeViewNode.level)
+        
+        return cell;
+        
+    }
+    
+    func treeViewSelectedNodeChildren(for treeViewNodeItem: Any) -> [Any] {
+        if let dataObj = treeViewNodeItem as? CITreeViewData {
+            return dataObj.children
+        }
+        return []
+        
+    }
+    
+    func treeViewDataArray() -> [Any] {
+        return data
+    }
+}
+

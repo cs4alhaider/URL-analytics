@@ -14,18 +14,12 @@
 		E813F950205C04DF0084B225 /* Json4Swift_demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E813F94E205C04DF0084B225 /* Json4Swift_demo.xcdatamodeld */; };
 		E813F952205C04DF0084B225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E813F951205C04DF0084B225 /* Assets.xcassets */; };
 		E813F955205C04DF0084B225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E813F953205C04DF0084B225 /* LaunchScreen.storyboard */; };
-		E813F95D205C06770084B225 /* JsonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F95C205C06770084B225 /* JsonCell.swift */; };
-		E813F96A205C088C0084B225 /* AllTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F95F205C088C0084B225 /* AllTime.swift */; };
-		E813F96B205C088C0084B225 /* AllURLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F960205C088C0084B225 /* AllURLData.swift */; };
-		E813F96C205C088C0084B225 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F961205C088C0084B225 /* Analytics.swift */; };
-		E813F96D205C088C0084B225 /* Browsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F962205C088C0084B225 /* Browsers.swift */; };
-		E813F96E205C088C0084B225 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F963205C088C0084B225 /* Countries.swift */; };
-		E813F96F205C088C0084B225 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F964205C088C0084B225 /* Day.swift */; };
-		E813F970205C088C0084B225 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F965205C088C0084B225 /* Month.swift */; };
-		E813F971205C088C0084B225 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F966205C088C0084B225 /* Platforms.swift */; };
-		E813F972205C088C0084B225 /* Referrers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F967205C088C0084B225 /* Referrers.swift */; };
-		E813F973205C088C0084B225 /* TwoHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F968205C088C0084B225 /* TwoHours.swift */; };
-		E813F974205C088C0084B225 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F969205C088C0084B225 /* Week.swift */; };
+		E813F95D205C06770084B225 /* CITreeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F95C205C06770084B225 /* CITreeViewCell.swift */; };
+		E89E612B2061798B00251DC7 /* CITreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E61282061798B00251DC7 /* CITreeView.swift */; };
+		E89E612C2061798B00251DC7 /* CITreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E61292061798B00251DC7 /* CITreeViewController.swift */; };
+		E89E612D2061798B00251DC7 /* CITreeViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E612A2061798B00251DC7 /* CITreeViewNode.swift */; };
+		E89E613020617A8F00251DC7 /* CITreeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E612F20617A8F00251DC7 /* CITreeViewData.swift */; };
+		E89E613220617AD700251DC7 /* CITreeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89E613120617AD700251DC7 /* CITreeViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,18 +34,12 @@
 		E813F951205C04DF0084B225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E813F954205C04DF0084B225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E813F956205C04DF0084B225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E813F95C205C06770084B225 /* JsonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonCell.swift; sourceTree = "<group>"; };
-		E813F95F205C088C0084B225 /* AllTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTime.swift; sourceTree = "<group>"; };
-		E813F960205C088C0084B225 /* AllURLData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllURLData.swift; sourceTree = "<group>"; };
-		E813F961205C088C0084B225 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		E813F962205C088C0084B225 /* Browsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browsers.swift; sourceTree = "<group>"; };
-		E813F963205C088C0084B225 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		E813F964205C088C0084B225 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		E813F965205C088C0084B225 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
-		E813F966205C088C0084B225 /* Platforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
-		E813F967205C088C0084B225 /* Referrers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referrers.swift; sourceTree = "<group>"; };
-		E813F968205C088C0084B225 /* TwoHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoHours.swift; sourceTree = "<group>"; };
-		E813F969205C088C0084B225 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		E813F95C205C06770084B225 /* CITreeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITreeViewCell.swift; sourceTree = "<group>"; };
+		E89E61282061798B00251DC7 /* CITreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeView.swift; sourceTree = "<group>"; };
+		E89E61292061798B00251DC7 /* CITreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeViewController.swift; sourceTree = "<group>"; };
+		E89E612A2061798B00251DC7 /* CITreeViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeViewNode.swift; sourceTree = "<group>"; };
+		E89E612F20617A8F00251DC7 /* CITreeViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeViewData.swift; sourceTree = "<group>"; };
+		E89E613120617AD700251DC7 /* CITreeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CITreeViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,30 +102,14 @@
 			path = "Json4Swift demo";
 			sourceTree = "<group>";
 		};
-		E813F95E205C088C0084B225 /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				E813F95F205C088C0084B225 /* AllTime.swift */,
-				E813F960205C088C0084B225 /* AllURLData.swift */,
-				E813F961205C088C0084B225 /* Analytics.swift */,
-				E813F962205C088C0084B225 /* Browsers.swift */,
-				E813F963205C088C0084B225 /* Countries.swift */,
-				E813F964205C088C0084B225 /* Day.swift */,
-				E813F965205C088C0084B225 /* Month.swift */,
-				E813F966205C088C0084B225 /* Platforms.swift */,
-				E813F967205C088C0084B225 /* Referrers.swift */,
-				E813F968205C088C0084B225 /* TwoHours.swift */,
-				E813F969205C088C0084B225 /* Week.swift */,
-			);
-			path = Json;
-			sourceTree = "<group>";
-		};
 		E813F975205C089E0084B225 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E89E612E20617A8F00251DC7 /* Models */,
+				E89E61272061798B00251DC7 /* CITreeViewClasses */,
 				E813F949205C04DF0084B225 /* ViewController.swift */,
-				E813F95C205C06770084B225 /* JsonCell.swift */,
-				E813F95E205C088C0084B225 /* Json */,
+				E813F95C205C06770084B225 /* CITreeViewCell.swift */,
+				E89E613120617AD700251DC7 /* CITreeViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +121,24 @@
 				E813F953205C04DF0084B225 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E89E61272061798B00251DC7 /* CITreeViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E89E61282061798B00251DC7 /* CITreeView.swift */,
+				E89E61292061798B00251DC7 /* CITreeViewController.swift */,
+				E89E612A2061798B00251DC7 /* CITreeViewNode.swift */,
+			);
+			path = CITreeViewClasses;
+			sourceTree = "<group>";
+		};
+		E89E612E20617A8F00251DC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E89E612F20617A8F00251DC7 /* CITreeViewData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +204,7 @@
 			files = (
 				E813F955205C04DF0084B225 /* LaunchScreen.storyboard in Resources */,
 				E813F952205C04DF0084B225 /* Assets.xcassets in Resources */,
+				E89E613220617AD700251DC7 /* CITreeViewCell.xib in Resources */,
 				E813F94D205C04DF0084B225 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,21 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E813F973205C088C0084B225 /* TwoHours.swift in Sources */,
-				E813F96D205C088C0084B225 /* Browsers.swift in Sources */,
-				E813F974205C088C0084B225 /* Week.swift in Sources */,
+				E89E613020617A8F00251DC7 /* CITreeViewData.swift in Sources */,
 				E813F950205C04DF0084B225 /* Json4Swift_demo.xcdatamodeld in Sources */,
-				E813F971205C088C0084B225 /* Platforms.swift in Sources */,
-				E813F972205C088C0084B225 /* Referrers.swift in Sources */,
-				E813F96C205C088C0084B225 /* Analytics.swift in Sources */,
-				E813F970205C088C0084B225 /* Month.swift in Sources */,
 				E813F94A205C04DF0084B225 /* ViewController.swift in Sources */,
-				E813F96E205C088C0084B225 /* Countries.swift in Sources */,
-				E813F96A205C088C0084B225 /* AllTime.swift in Sources */,
-				E813F95D205C06770084B225 /* JsonCell.swift in Sources */,
+				E89E612D2061798B00251DC7 /* CITreeViewNode.swift in Sources */,
+				E89E612C2061798B00251DC7 /* CITreeViewController.swift in Sources */,
+				E813F95D205C06770084B225 /* CITreeViewCell.swift in Sources */,
 				E813F948205C04DF0084B225 /* AppDelegate.swift in Sources */,
-				E813F96F205C088C0084B225 /* Day.swift in Sources */,
-				E813F96B205C088C0084B225 /* AllURLData.swift in Sources */,
+				E89E612B2061798B00251DC7 /* CITreeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
