@@ -46,11 +46,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         getLongURLFromGoogle()
         
         
+    }
+    
+    func showTheTable(){
+        
+        SVProgressHUD.show(withStatus: "Customizing data ...")
         data = CITreeViewData.getDefaultCITreeViewData()
         treeView = CITreeView.init(frame: self.view.bounds, style: UITableViewStyle.plain)
         treeView.treeViewDelegate = self
@@ -58,19 +61,10 @@ class ViewController: UIViewController {
         treeView.collapseNoneSelectedRows = false
         treeView.register(UINib(nibName: treeViewCellNibName, bundle: nil), forCellReuseIdentifier: treeViewCellIdentifier)
         self.view.addSubview(treeView)
-
         
-        
-        
-        
+        SVProgressHUD.showSuccess(withStatus: "Done")
+        SVProgressHUD.dismiss(withDelay: 1.5)
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     func getLongURLFromGoogle(){
@@ -81,15 +75,24 @@ class ViewController: UIViewController {
             //    print(JSON)
             //}
             
+            SVProgressHUD.show(withStatus: "Loading data from server ...")
+            
             if responds.result.isSuccess {
                 //print(responds)
                 
                 let urlJSON : JSON = JSON(responds.result.value!)
                 
-                
                 shortURL = urlJSON["id"].stringValue
                 print(shortURL!)
                 
+                longURL = urlJSON["longUrl"].stringValue
+                print(longURL!)
+                
+                status = urlJSON["status"].stringValue
+                print(status!)
+                
+                created = urlJSON["created"].stringValue
+                print(created!)
                 
                 shortUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
                 longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
@@ -106,8 +109,13 @@ class ViewController: UIViewController {
                 shortUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
                 longUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["longUrlClicks"].stringValue
                 
-                self.treeView.reloadData()
+                SVProgressHUD.dismiss()
                 
+                self.showTheTable()
+                
+            }else{
+                SVProgressHUD.showError(withStatus: "Error!")
+                SVProgressHUD.dismiss(withDelay: 2)
             }
         }
         
