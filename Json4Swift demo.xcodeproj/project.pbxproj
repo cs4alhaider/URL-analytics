@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DBEF54D4EB1EB617BD7CBE2 /* Pods_Json4Swift_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B238DC1D5EF6C5CEB5DCDDC /* Pods_Json4Swift_demo.framework */; };
 		E813F948205C04DF0084B225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F947205C04DF0084B225 /* AppDelegate.swift */; };
 		E813F94A205C04DF0084B225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F949205C04DF0084B225 /* ViewController.swift */; };
 		E813F94D205C04DF0084B225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E813F94B205C04DF0084B225 /* Main.storyboard */; };
@@ -28,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B238DC1D5EF6C5CEB5DCDDC /* Pods_Json4Swift_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Json4Swift_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10F0AB31C8A13869F6DD198 /* Pods-Json4Swift demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Json4Swift demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Json4Swift demo/Pods-Json4Swift demo.debug.xcconfig"; sourceTree = "<group>"; };
+		DD579077D0D0D305EFA2466B /* Pods-Json4Swift demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Json4Swift demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Json4Swift demo/Pods-Json4Swift demo.release.xcconfig"; sourceTree = "<group>"; };
 		E813F944205C04DF0084B225 /* Json4Swift demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json4Swift demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E813F947205C04DF0084B225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E813F949205C04DF0084B225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBEF54D4EB1EB617BD7CBE2 /* Pods_Json4Swift_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32C75295E43A0FE61B49A98D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B238DC1D5EF6C5CEB5DCDDC /* Pods_Json4Swift_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E7F0232F8D015935518F2DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A10F0AB31C8A13869F6DD198 /* Pods-Json4Swift demo.debug.xcconfig */,
+				DD579077D0D0D305EFA2466B /* Pods-Json4Swift demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E813F93B205C04DF0084B225 = {
 			isa = PBXGroup;
 			children = (
 				E813F946205C04DF0084B225 /* Json4Swift demo */,
 				E813F945205C04DF0084B225 /* Products */,
+				6E7F0232F8D015935518F2DE /* Pods */,
+				32C75295E43A0FE61B49A98D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E813F959205C04DF0084B225 /* Build configuration list for PBXNativeTarget "Json4Swift demo" */;
 			buildPhases = (
+				F39A3BB1C5D1FAE62499A1F6 /* [CP] Check Pods Manifest.lock */,
 				E813F940205C04DF0084B225 /* Sources */,
 				E813F941205C04DF0084B225 /* Frameworks */,
 				E813F942205C04DF0084B225 /* Resources */,
+				C15F8A3986D828CAF5C1ECEE /* [CP] Embed Pods Frameworks */,
+				227CCB80C1B66DF1AF76D963 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +219,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		227CCB80C1B66DF1AF76D963 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Json4Swift demo/Pods-Json4Swift demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C15F8A3986D828CAF5C1ECEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Json4Swift demo/Pods-Json4Swift demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Json4Swift demo/Pods-Json4Swift demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39A3BB1C5D1FAE62499A1F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Json4Swift demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E813F940205C04DF0084B225 /* Sources */ = {
@@ -347,31 +434,35 @@
 		};
 		E813F95A205C04DF0084B225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10F0AB31C8A13869F6DD198 /* Pods-Json4Swift demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = "Json4Swift demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.alhaider.Json4Swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E813F95B205C04DF0084B225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD579077D0D0D305EFA2466B /* Pods-Json4Swift demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = "Json4Swift demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.alhaider.Json4Swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
