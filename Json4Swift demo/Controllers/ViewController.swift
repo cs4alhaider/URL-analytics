@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         getLongURLFromGoogle()
         
+        //treeView.backgroundColor = UIColor.darkGray
         
     }
     
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
         treeView.collapseNoneSelectedRows = false
         treeView.register(UINib(nibName: treeViewCellNibName, bundle: nil), forCellReuseIdentifier: treeViewCellIdentifier)
         self.view.addSubview(treeView)
+        
         
         SVProgressHUD.showSuccess(withStatus: "Done")
         SVProgressHUD.dismiss(withDelay: 1.5)
@@ -137,10 +139,17 @@ extension ViewController : CITreeViewDelegate {
     }
     
     func willExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
+        print(IndexPath.init(row: 4, section: 1))
         
+        if IndexPath.init(row: 4, section: 1) == [1,4] {
+            print("We are HERE!")
+            
+        }
     }
     
     func didExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
+        
+        
         
     }
     
@@ -162,6 +171,7 @@ extension ViewController : CITreeViewDataSource {
         let dataObj = treeViewNode.item as! CITreeViewData
         cell.nameLabel.text = dataObj.name
         cell.setupCell(level: treeViewNode.level)
+        
         
         return cell;
         

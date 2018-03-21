@@ -38,7 +38,7 @@ extension CITreeViewData {
         let parent1 = CITreeViewData(name: "Short URL : \(shortURL ?? "Error!")")
         let parent2 = CITreeViewData(name: "Long URL : \(longURL ?? "Error!")")
         let parent3 = CITreeViewData(name: "Status is : \(status ?? "Error!")")
-        let parent4 = CITreeViewData(name: "created in : \(created ?? "Error!")")
+        let parent4 = CITreeViewData(name: "Created in : \(created ?? "Error!")")
         
         
         
