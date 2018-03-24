@@ -12,8 +12,10 @@ https://api.myjson.com/bins/17rcy5
 
 
 
-This project depend on two frameworks 
+This project depends on three main frameworks 
 ---
-1- SwiftyJSON >> https://github.com/SwiftyJSON/SwiftyJSON
+1- Alamofire >> https://github.com/Alamofire/Alamofire
 
-2- CITreeView >> https://github.com/cenksk/CITreeView
+2- SwiftyJSON >> https://github.com/SwiftyJSON/SwiftyJSON
+
+3- CITreeView >> https://github.com/cenksk/CITreeView
