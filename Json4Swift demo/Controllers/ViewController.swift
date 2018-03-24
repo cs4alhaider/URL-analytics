@@ -18,6 +18,13 @@ var created: String?
 var shortUrlClicksAllTimes: String?
 var longUrlClicksAllTimes: String?
 
+var platformsIdAllTime: [String]?
+var platformsCountAllTime: [String]?
+
+var countriesIdAllTime: [String]?
+var countriesCountAllTime: [String]?
+
+
 var shortUrlClicksLastMonth: String?
 var longUrlClicksLastMonth: String?
 
@@ -46,9 +53,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getLongURLFromGoogle()
         
-        //treeView.backgroundColor = UIColor.darkGray
+        getLongURLFromGoogle()
         
     }
     
@@ -85,19 +91,24 @@ class ViewController: UIViewController {
                 let urlJSON : JSON = JSON(responds.result.value!)
                 
                 shortURL = urlJSON["id"].stringValue
-                print(shortURL!)
-                
                 longURL = urlJSON["longUrl"].stringValue
-                print(longURL!)
-                
                 status = urlJSON["status"].stringValue
-                print(status!)
-                
                 created = urlJSON["created"].stringValue
-                print(created!)
                 
                 shortUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
                 longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
+                
+                platformsIdAllTime = urlJSON["analytics"]["allTime"]["platforms"].arrayValue.map({$0["id"].stringValue})
+                platformsCountAllTime = urlJSON["analytics"]["allTime"]["platforms"].arrayValue.map({$0["count"].stringValue})
+                
+                print(platformsIdAllTime!)
+                print(platformsCountAllTime!)
+                
+                countriesIdAllTime = urlJSON["analytics"]["allTime"]["countries"].arrayValue.map({$0["id"].stringValue})
+                countriesCountAllTime = urlJSON["analytics"]["allTime"]["countries"].arrayValue.map({$0["count"].stringValue})
+                
+                print(countriesIdAllTime!)
+                print(countriesCountAllTime!)
                 
                 shortUrlClicksLastMonth = urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
                 longUrlClicksLastMonth = urlJSON["analytics"]["month"]["longUrlClicks"].stringValue
@@ -135,16 +146,10 @@ extension ViewController : CITreeViewDelegate {
     }
     
     func treeView(_ treeView: CITreeView, didSelectRowAt treeViewNode: CITreeViewNode) {
-        print(treeViewNode.level)
     }
     
     func willExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {
-        print(IndexPath.init(row: 4, section: 1))
         
-        if IndexPath.init(row: 4, section: 1) == [1,4] {
-            print("We are HERE!")
-            
-        }
     }
     
     func didExpandTreeViewNode(treeViewNode: CITreeViewNode, atIndexPath: IndexPath) {

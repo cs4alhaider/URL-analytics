@@ -45,6 +45,11 @@ extension CITreeViewData {
         let subChild511 = CITreeViewData(name: "Short URL Clicks : \(shortUrlClicksAllTimes ?? "Error!")")
         let subChild512 = CITreeViewData(name: "Long URL Clicks : \(longUrlClicksAllTimes ?? "Error!")")
         
+        let subChild5131 = CITreeViewData(name: "ID : \([platformsIdAllTime]) Count : \([platformsCountAllTime])")
+        //let subChild5131 = CITreeViewData(name: "ID : \([platformsIdAllTime![IndexPath.init(row: 2, section: 3)]]) Count : \([platformsCountAllTime])")
+        
+        let subChild513 = CITreeViewData(name: "Platforms", children: [subChild5131])
+        
         let subChild521 = CITreeViewData(name: "Short URL Clicks : \(shortUrlClicksLastMonth ?? "Error!")")
         let subChild522 = CITreeViewData(name: "Long URL Clicks : \(longUrlClicksLastMonth ?? "Error!")")
         
@@ -57,7 +62,7 @@ extension CITreeViewData {
         let subChild551 = CITreeViewData(name: "Short URL Clicks : \(shortUrlClicksLastTwoHours ?? "Error!")")
         let subChild552 = CITreeViewData(name: "Long URL Clicks : \(longUrlClicksLastTwoHours ?? "Error!")")
         
-        let child51 = CITreeViewData(name: "All Times", children: [subChild511, subChild512])
+        let child51 = CITreeViewData(name: "All Times", children: [subChild511, subChild512,subChild513])
         let child52 = CITreeViewData(name: "Last Mounth", children: [subChild521, subChild522])
         let child53 = CITreeViewData(name: "Last Week", children: [subChild531, subChild532])
         let child54 = CITreeViewData(name: "Last Day", children: [subChild541, subChild542])
