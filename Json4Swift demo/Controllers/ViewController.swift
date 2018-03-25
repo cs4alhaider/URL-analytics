@@ -10,6 +10,9 @@ import Alamofire
 import SVProgressHUD
 import SwiftyJSON
 
+
+var allJSONArray:[JSON] = []
+
 var longURL: String?
 var shortURL: String?
 var status: String?
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
         treeView.register(UINib(nibName: treeViewCellNibName, bundle: nil), forCellReuseIdentifier: treeViewCellIdentifier)
         self.view.addSubview(treeView)
         
+        treeView.separatorStyle = .none
         
         SVProgressHUD.showSuccess(withStatus: "Done")
         SVProgressHUD.dismiss(withDelay: 1.5)
@@ -78,49 +82,48 @@ class ViewController: UIViewController {
     func getLongURLFromGoogle(){
         
         Alamofire.request(jsonURL, method: .get).responseJSON { (responds) in
-            
-            //if let JSON = responds.result.value {
-            //    print(JSON)
-            //}
-            
+           
             SVProgressHUD.show(withStatus: "Loading data from server ...")
             
             if responds.result.isSuccess {
-                //print(responds)
                 
                 let urlJSON : JSON = JSON(responds.result.value!)
+                
+                allJSONArray = [urlJSON]
+                print(allJSONArray)
                 
                 shortURL = urlJSON["id"].stringValue
                 longURL = urlJSON["longUrl"].stringValue
                 status = urlJSON["status"].stringValue
                 created = urlJSON["created"].stringValue
-                
+
                 shortUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["shortUrlClicks"].stringValue
                 longUrlClicksAllTimes = urlJSON["analytics"]["allTime"]["longUrlClicks"].stringValue
-                
+
                 platformsIdAllTime = urlJSON["analytics"]["allTime"]["platforms"].arrayValue.map({$0["id"].stringValue})
                 platformsCountAllTime = urlJSON["analytics"]["allTime"]["platforms"].arrayValue.map({$0["count"].stringValue})
-                
-                print(platformsIdAllTime!)
-                print(platformsCountAllTime!)
-                
+
+                //print(platformsIdAllTime!)
+                //print(platformsCountAllTime!)
+
                 countriesIdAllTime = urlJSON["analytics"]["allTime"]["countries"].arrayValue.map({$0["id"].stringValue})
                 countriesCountAllTime = urlJSON["analytics"]["allTime"]["countries"].arrayValue.map({$0["count"].stringValue})
-                
-                print(countriesIdAllTime!)
-                print(countriesCountAllTime!)
-                
+
+                //print(countriesIdAllTime!)
+                //print(countriesCountAllTime!)
+
                 shortUrlClicksLastMonth = urlJSON["analytics"]["month"]["shortUrlClicks"].stringValue
                 longUrlClicksLastMonth = urlJSON["analytics"]["month"]["longUrlClicks"].stringValue
-                
+
                 shortUrlClicksLastWeek = urlJSON["analytics"]["week"]["shortUrlClicks"].stringValue
                 longUrlClicksLastWeek = urlJSON["analytics"]["week"]["longUrlClicks"].stringValue
-                
+
                 shortUrlClicksLastDay = urlJSON["analytics"]["day"]["shortUrlClicks"].stringValue
                 longUrlClicksLastDay = urlJSON["analytics"]["day"]["longUrlClicks"].stringValue
-                
+
                 shortUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["shortUrlClicks"].stringValue
                 longUrlClicksLastTwoHours = urlJSON["analytics"]["twoHours"]["longUrlClicks"].stringValue
+                
                 
                 SVProgressHUD.dismiss()
                 
@@ -131,7 +134,6 @@ class ViewController: UIViewController {
                 SVProgressHUD.dismiss(withDelay: 2)
             }
         }
-        
     }
     
     
@@ -187,7 +189,6 @@ extension ViewController : CITreeViewDataSource {
             return dataObj.children
         }
         return []
-        
     }
     
     func treeViewDataArray() -> [Any] {

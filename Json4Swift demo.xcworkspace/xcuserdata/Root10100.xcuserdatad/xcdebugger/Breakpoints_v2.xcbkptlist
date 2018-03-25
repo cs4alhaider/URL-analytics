@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Json4Swift demo/Controllers/Models/CITreeViewData.swift"
+            timestampString = "543679084.683776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getDefaultCITreeViewData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Json4Swift_demo.CITreeViewData.getDefaultCITreeViewData() -&gt; Swift.Array&lt;Json4Swift_demo.CITreeViewData&gt;"
+                  moduleName = "Json4Swift demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Root10100/Documents/Json4Swift%20demo/Json4Swift%20demo/Controllers/Models/CITreeViewData.swift"
+                  timestampString = "543264894.504887"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "287">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in static Json4Swift_demo.CITreeViewData.getDefaultCITreeViewData() -&gt; Swift.Array&lt;Json4Swift_demo.CITreeViewData&gt;"
+                  moduleName = "Json4Swift demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Root10100/Documents/Json4Swift%20demo/Json4Swift%20demo/Controllers/Models/CITreeViewData.swift"
+                  timestampString = "543264894.508229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Json4Swift demo/Controllers/Models/CITreeViewData.swift"
+            timestampString = "543679084.683847"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getDefaultCITreeViewData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

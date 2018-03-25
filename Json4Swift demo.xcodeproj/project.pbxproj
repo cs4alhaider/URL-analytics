@@ -15,6 +15,7 @@
 		E813F952205C04DF0084B225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E813F951205C04DF0084B225 /* Assets.xcassets */; };
 		E813F955205C04DF0084B225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E813F953205C04DF0084B225 /* LaunchScreen.storyboard */; };
 		E813F95D205C06770084B225 /* CITreeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813F95C205C06770084B225 /* CITreeViewCell.swift */; };
+		E85A0E012067E12F00B50595 /* MyAnalyticsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0E002067E12F00B50595 /* MyAnalyticsData.swift */; };
 		E89E612B2061798B00251DC7 /* CITreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E61282061798B00251DC7 /* CITreeView.swift */; };
 		E89E612C2061798B00251DC7 /* CITreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E61292061798B00251DC7 /* CITreeViewController.swift */; };
 		E89E612D2061798B00251DC7 /* CITreeViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E612A2061798B00251DC7 /* CITreeViewNode.swift */; };
@@ -35,6 +36,7 @@
 		E813F954205C04DF0084B225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E813F956205C04DF0084B225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E813F95C205C06770084B225 /* CITreeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITreeViewCell.swift; sourceTree = "<group>"; };
+		E85A0E002067E12F00B50595 /* MyAnalyticsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnalyticsData.swift; sourceTree = "<group>"; };
 		E89E61282061798B00251DC7 /* CITreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeView.swift; sourceTree = "<group>"; };
 		E89E61292061798B00251DC7 /* CITreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeViewController.swift; sourceTree = "<group>"; };
 		E89E612A2061798B00251DC7 /* CITreeViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CITreeViewNode.swift; sourceTree = "<group>"; };
@@ -93,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				E813F947205C04DF0084B225 /* AppDelegate.swift */,
-				E813F975205C089E0084B225 /* Controllers */,
 				E813F976205C09800084B225 /* View */,
+				E813F975205C089E0084B225 /* Controllers */,
 				E813F951205C04DF0084B225 /* Assets.xcassets */,
 				E813F956205C04DF0084B225 /* Info.plist */,
 				E813F94E205C04DF0084B225 /* Json4Swift_demo.xcdatamodeld */,
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E89E612F20617A8F00251DC7 /* CITreeViewData.swift */,
+				E85A0E002067E12F00B50595 /* MyAnalyticsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89E613020617A8F00251DC7 /* CITreeViewData.swift in Sources */,
+				E85A0E012067E12F00B50595 /* MyAnalyticsData.swift in Sources */,
 				E813F950205C04DF0084B225 /* Json4Swift_demo.xcdatamodeld in Sources */,
 				E813F94A205C04DF0084B225 /* ViewController.swift in Sources */,
 				E89E612D2061798B00251DC7 /* CITreeViewNode.swift in Sources */,
